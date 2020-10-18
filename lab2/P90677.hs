@@ -43,11 +43,13 @@ myFilter b ys
 --7)
 myAll :: (a -> Bool) -> [a] -> Bool
 
-myAll b ys
+myAll b ys = and (map b ys)
+    {-
+    myAll b ys
     |null ys == True = False
     |(length ys == 1) && (b (head ys) == True) = True
     |b (head ys) == False = False
-    |otherwise = myAll b (tail ys)
+    |otherwise = myAll b (tail ys)-}
 
 --8)
 myAny :: (a -> Bool) -> [a] -> Bool
